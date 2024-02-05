@@ -2,9 +2,6 @@ package com.img.cls;
 
 import com.img.cls.models.cifar10.Cifar10ImageClassifier;
 import com.img.cls.utils.ResourceUtils;
-import org.datavec.image.loader.NativeImageLoader;
-import org.example.ImageClassifierApp;
-import org.nd4j.linalg.api.ndarray.INDArray;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -21,7 +18,7 @@ public class DemoGui extends JFrame {
     private File selectedFile;
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new ImageClassifierApp());
+        SwingUtilities.invokeLater(() -> new DemoGui());
     }
 
     public DemoGui() {
