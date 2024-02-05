@@ -9,6 +9,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 
+// Credit: https://github.com/chen0040/java-tensorflow-samples/tree/master/image-classifier
 public class Cifar10ImageClassifierDemo {
 
 

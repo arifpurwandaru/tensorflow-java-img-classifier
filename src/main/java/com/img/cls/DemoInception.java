@@ -10,6 +10,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
+// Credit: https://github.com/chen0040/java-tensorflow-samples/tree/master/image-classifier
 public class DemoInception extends JFrame {
     private JLabel imageLabel;
     private JButton openButton;
