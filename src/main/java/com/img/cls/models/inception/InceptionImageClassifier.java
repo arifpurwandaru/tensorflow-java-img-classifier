@@ -1,9 +1,7 @@
 package com.img.cls.models.inception;
 
-import com.img.cls.Cifar10ImageClassifierDemo;
 import com.img.cls.utils.ImageUtils;
 import com.img.cls.utils.InputStreamUtils;
-import com.img.cls.utils.ResourceUtils;
 import com.img.cls.utils.TensorUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,13 +25,6 @@ public class InceptionImageClassifier implements AutoCloseable {
     private List<String> labels = new ArrayList<>();
     public InceptionImageClassifier() {
 
-    }
-
-    public void load_model() throws IOException {
-        InputStream inputStream = ResourceUtils.getInputStream("tf_models/tensorflow_inception_graph.pb");
-        load_model(inputStream);
-        inputStream = ResourceUtils.getInputStream("tf_models/imagenet_comp_graph_label_strings.txt");
-        load_labels(inputStream);
     }
 
     public void load_model(InputStream inputStream) throws IOException {
@@ -62,6 +53,7 @@ public class InceptionImageClassifier implements AutoCloseable {
 
         image = ImageUtils.resizeImage(image, imgWidth, imgHeight);
 
+        // 1
         Tensor<Float> imageTensor = TensorUtils.getImageTensorNormalized(image, imgWidth, imgHeight);
 
         try (Session sess = new Session(graph);
